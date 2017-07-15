@@ -450,7 +450,8 @@ namespace VeraCrypt
 					options.SharedAccessAllowed,
 					VolumeType::Unknown,
 					options.UseBackupHeaders,
-					options.PartitionInSystemEncryptionScope
+					options.PartitionInSystemEncryptionScope,
+					options.IgnorePartitionStartCheck
 					);
 
 				options.Password.reset();

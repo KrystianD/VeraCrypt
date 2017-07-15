@@ -94,6 +94,7 @@ namespace VeraCrypt
 		parser.AddSwitch (L"",	L"version",				_("Display version information"));
 		parser.AddSwitch (L"",	L"volume-properties",	_("Display volume properties"));
 		parser.AddOption (L"",	L"volume-type",			_("Volume type"));
+		parser.AddSwitch (L"",	L"ignore-partition-start-check",			_("Ignore partition start check"));
 		parser.AddParam (								_("Volume path"), wxCMD_LINE_VAL_STRING, wxCMD_LINE_PARAM_OPTIONAL);
 		parser.AddParam (								_("Mount point"), wxCMD_LINE_VAL_STRING, wxCMD_LINE_PARAM_OPTIONAL);
 
@@ -601,6 +602,9 @@ namespace VeraCrypt
 
 		if (parser.Found (L"verbose"))
 			Preferences.Verbose = true;
+
+		if (parser.Found (L"ignore-partition-start-check"))
+			ArgMountOptions.IgnorePartitionStartCheck = true;
 
 		if (parser.Found (L"volume-type", &str))
 		{

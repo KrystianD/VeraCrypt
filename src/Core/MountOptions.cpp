@@ -53,6 +53,7 @@ namespace VeraCrypt
 		TC_CLONE (SlotNumber);
 		TC_CLONE (UseBackupHeaders);
 		TC_CLONE (TrueCryptMode);
+		TC_CLONE (IgnorePartitionStartCheck);
 	}
 
 	void MountOptions::Deserialize (shared_ptr <Stream> stream)
@@ -125,6 +126,7 @@ namespace VeraCrypt
 
 		sr.Deserialize ("Pim", Pim);
 		sr.Deserialize ("ProtectionPim", ProtectionPim);
+		sr.Deserialize ("IgnorePartitionStartCheck", IgnorePartitionStartCheck);
 	}
 
 	void MountOptions::Serialize (shared_ptr <Stream> stream) const
@@ -179,6 +181,7 @@ namespace VeraCrypt
 
 		sr.Serialize ("Pim", Pim);
 		sr.Serialize ("ProtectionPim", ProtectionPim);
+		sr.Serialize ("IgnorePartitionStartCheck", IgnorePartitionStartCheck);
 	}
 
 	TC_SERIALIZER_FACTORY_ADD_CLASS (MountOptions);

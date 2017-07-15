@@ -965,7 +965,6 @@ namespace VeraCrypt
 							break;
 						}
 					}
-
 					if (Preferences.NonInteractive)
 					{
 						// Volume path
@@ -1135,6 +1134,9 @@ namespace VeraCrypt
 					"\n"
 					"--save-preferences\n"
 					" Save user preferences.\n"
+					"\n"
+					"--ignore-partition-start-check\n"
+					" Ignore partition start check (useful for mounting system volumes on device-mapper).\n"
 					"\n"
 					"--test\n"
 					" Test internal algorithms used in the process of encryption and decryption.\n"
